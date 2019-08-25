@@ -17,9 +17,9 @@
  		$this->options = array_merge($this->defaults, $opts);
 
  		$config = array(
-			"tpl_dir" =>$_SERVER["DOCUMENT_ROOT"].$tpl_dir,
-			"cache_dir" =>$_SERVER["DOCUMENT_ROOT"]."/views-cache/",
-			"debug" => false // set to false to improve the speed
+			"tpl_dir-" 	=>	$_SERVER["DOCUMENT_ROOT"].$tpl_dir,
+			"cache_dir" =>	$_SERVER["DOCUMENT_ROOT"]."/views-cache/",
+			"debug" 	=> 	false // set to false to improve the speed
 		);
 		Tpl::configure( $config );
 		$this->tpl = new Tpl;
@@ -35,7 +35,7 @@
 
  	public function setTpl($name, $data = array(), $returnHTML = false){
  		$this->setData($data);
- 		return $this->tpl->assign($name, $returnHTML);
+ 		return $this->tpl->draw($name, $returnHTML);
 
  	}
 
