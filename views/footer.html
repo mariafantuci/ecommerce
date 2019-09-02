@@ -93,6 +93,6 @@
     
     <!-- Slider -->
     <script type="text/javascript" src="/res/site/js/bxslider.min.js"></script>
-	<script type="text/javascript" src="/res/site/js/script.slider.js"></script>
+    <script type="text/javascript" src="/res/site/js/script.slider.js"></script>
   </body>
 </html>

@@ -43,6 +43,40 @@ $app->get('/admin/logout', function() {
 	header("location: /admin/login");
 });
 
+$app->get("/admin/users/:iduser", function($iduser){
+	User::verifyLogin();
+});
+
+$app->get("/admin/users", function(){
+	User::verifyLogin();
+	$users = User::listAll();
+	$page = new PageAdmin();
+	$page ->setTpl("users");
+});
+
+$app->get("/admin/users/:iduser", function($idser){
+	User::verifyLogin();
+	$page = new PageAdmin();
+	$page ->setTpl("users-update");
+});
+
+$app->get("/admin/users/create", function(){
+	User::verifyLogin();
+	$page = new PageAdmin();
+	$page ->setTpl("users-create", array(
+		"users"=>users
+
+	));
+});
+
+$app->post("/admin/users/create", function(){
+	User::verifyLogin();
+});
+
+$app->post("/admin/users/:iduser", function($iduser){
+	User::verifyLogin();
+});
+
 $app->run();
 
  ?>
